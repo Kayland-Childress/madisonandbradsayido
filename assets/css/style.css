@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #fcebe2;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: #f5b1a6;
+}
+
+/*=================*/
+/*      HEADER     */
+/*=================*/
+header {
+  position: relative;
+  padding: 0 2rem;
+  background-color: #52786a;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/*===============*/
+/* DROPDOWN MENU */
+/*===============*/
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown_menu a {
+  color: #52786a;
+}
+
+.dropdown_menu .toggle_btn {
+}
+
+/*=====================*/
+/*         HERO        */
+/*=====================*/
+section#hero {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #52786a;
+
+  background-image: url(../img/home-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#hero h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  font-family: "Jacques Francois", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#hero h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 250;
+  margin-bottom: 1rem;
+}
+
+/*=============================*/
+/* RESPONSIVE DESIGN NAVIGATION*/
+/*=============================*/
+
+@media (max-width: 576px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+
+    left: 2rem;
+    width: unset;
+  }
+}
+
+/*===========================*/
+/*           FOOTER          */
+/*===========================*/
+
+section#footer {
+  text-align: center;
+  height: 60px;
+  max-width: 100%;
+  color: #fff;
+  background-color: #52786a;
+  align-content: center;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+section#footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+section#footer a:hover {
+  color: #f5b1a6;
+}
+
+/*===============================*/
+/*    RESPONSIVE DESIGN HERO     */
+/*===============================*/
+
+@media (max-width: 992px) {
+  #hero h1 {
+    font-size: 4rem;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero h1 {
+    font-size: 3rem;
+  }
+
+  #hero h2 {
+    font-size: 1.75rem;
+  }
+}
