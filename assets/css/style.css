@@ -186,6 +186,16 @@ section#footer {
   margin: 0 auto;
 }
 
+section#footer button {
+  padding: 0;
+  margin: 0;
+  font-size: 10.72px;
+}
+
+section#footer button:hover {
+  color: #f5b1a6;
+}
+
 section#footer a {
   text-decoration: none;
   color: #fff;
