@@ -228,3 +228,258 @@ section#footer a:hover {
     font-size: 1.75rem;
   }
 }
+
+/*===============================*/
+/*       PHOTOS PAGE STYLE       */
+/*===============================*/
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+/*    PHOTOS FOOTER    */
+
+section.photos {
+  position: absolute;
+}
+
+/*==================================*/
+/*       WEDDING PARTY STYLING      */
+/*==================================*/
+
+section#partyContainer {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #52786a;
+
+  background-image: url(../img/home-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+i {
+	position: relative;
+	display: block;
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+	border-radius: 5px;
+  
+}
+
+i:before, i:after {
+	/*content: '⥪';*/
+  content: '<';
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	z-index: 2;
+	width: 2rem;
+	height: 2rem;
+	background: #52786a;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+i:after {
+	/*content: '⥭';*/
+  content: '>';
+	left: auto;
+	right: 1rem;
+}
+
+/* I haven't found a way for IE and Edge to let me style inputs that way */
+input {
+	appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transform: translateX(100%);
+	transition: transform ease-in-out 400ms;
+	z-index: 1;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:after {
+	content: attr(title);
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	padding: .5rem;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+
+input:not(checked):before {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	top: 50%;
+	left: calc(-100% + 1rem);
+}
+
+input:checked:before {
+	display: none;
+	left: 1rem;
+}
+
+input:checked {
+	transform: translateX(0);
+	pointer-event: none;
+	z-index: 0;
+	box-shadow: -5px 10px 20px -15px rgba(0,0,0,1);
+}
+
+input:checked + input:before {
+	left: -3rem;
+}
+
+input:checked + input ~ input:before {
+	display: none;
+}
+
+/*==================================*/
+/*           PHOTOS PAGE            */
+/*==================================*/
+.swiper-container {
+  width: 80%;
+  height: 100vh;
+  float: left;
+  transition: opacity 0.6s ease, transform 0.3s ease;
+  &.nav-slider {
+    width:20%;
+    padding-left: 5px;
+    .swiper-slide {
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+      .content{
+        width: 100%;
+        .title{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.loading {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.swiper-wrapper {
+
+}
+
+.swiper-slide {
+  overflow: hidden;
+  /*@extend %backface_visibility_hidden;*/
+  .slide-bgimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .entity-img{
+    display:none;
+  }
+
+  .contant {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 50%;
+    padding-left: 5%;
+    color:#fff;
+    .title {
+      font-size: 2.6em;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .caption {
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
+      transform: translateX(50px);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.7s ease;
+      &.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}  
+
+  [class^="swiper-button-"] {
+    width: 44px;
+    opacity: 0;
+    visibility: hidden;
+    /*@extend %transition_all_03s;*/
+  }
+  .swiper-button-prev {
+    transform: translateX(50px);
+  }
+  .swiper-button-next {
+    transform: translateX(-50px);
+  }
