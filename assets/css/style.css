@@ -72,10 +72,10 @@ header {
   width: 300px;
   background: rgba(82, 120, 106, 0.8);
   -webkit-background: rgba(82, 120, 106, 0.8);
-  /*background: rgba(245, 177, 166, 0.8);
-  -webkit-background: rgba(245, 177, 166, 0.8);
-  /*backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);*/
+  /*background: rgba(245, 177, 166, 0.8);*/
+  /*-webkit-background: rgba(245, 177, 166, 0.8);*/
+  /*backdrop-filter: blur(15px);*/
+  /*-webkit-backdrop-filter: blur(15px);*/
   border-radius: 10px;
   -webkit-border-radius: 10px;
   overflow: hidden;
