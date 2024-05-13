@@ -192,7 +192,7 @@ section#footer button {
   font-size: 10.72px;
 }
 
-section#footer button:hover {
+button:hover {
   color: #f5b1a6;
 }
 
