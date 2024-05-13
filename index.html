@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Madison and William Say I Do</title>
+    <title>Madison and Brad Say I Do</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Madison and Brad's Wedding Site" />
     <!--Links-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jacques+Francois&display=swap" rel="stylesheet">
-  
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Jacques+Francois&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    
   </head>
-  
+
   <!--Google Analytics Tag Here-->
-  
+
   <body>
     <header>
       <div class="navbar">
-        
         <ul class="links">
-          <li><a href= "index.html">Home</a></li>
-          <li><a href= "photos.html">Photos</a></li>
-          <li><a href= "contact">Wedding Party</a></li>
-          <li><a href= "qa.html">Q + A</a></li>
-          <li><a href= "#">Registry</a></li>
-          <li><a href= "#">RSVP</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="contact">Wedding Party</a></li>
+          <li><a href="qa.html">Q + A</a></li>
+          <li><a href="#">Registry</a></li>
+          <li><a href="#">RSVP</a></li>
         </ul>
-                
-        <div class= "toggle_btn">
+
+        <div class="toggle_btn">
           <i class="fa-solid fa-ellipsis"></i>
-          
         </div>
       </div>
-      
-      <div class= "dropdown_menu">
-        <li><a href= "index.html">Home</a></li>
-        <li><a href= "photos.html">Photos</a></li>
-        <li><a href= "contact">Wedding Party</a></li>
-        <li><a href= "qa.html">Q + A</a></li>
-        <li><a href= "#">Registry</a></li>
-        <li><a href= "#">RSVP</a></li>
+
+      <div class="dropdown_menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="contact">Wedding Party</a></li>
+        <li><a href="qa.html">Q + A</a></li>
+        <li><a href="#">Registry</a></li>
+        <li><a href="#">RSVP</a></li>
       </div>
     </header>
-      
+
     <main>
       <section id="hero">
-        <h1>Madison & William</h1>
-        <h2>November 16, 2024 - Benton, AR</h2>
+        <h1>Madison & Brad</h1>
+        <h2>November 16, 2024 - Bryant, AR</h2>
       </section>
-      
+
       <section id="footer">
         <h6>&copy2024 The Boogaerts | <a href="#">Contact Us</a></h6>
       </section>
-    </main>  
-      
+    </main>
+
     <script>
-      const toggleBtn = document.querySelector('.toggle_btn')
-      const toggleBtnIcon = document.querySelector('.toggle_btn i')
-      const dropDownMenu = document.querySelector('.dropdown_menu')
-      
+      const toggleBtn = document.querySelector(".toggle_btn");
+      const toggleBtnIcon = document.querySelector(".toggle_btn i");
+      const dropDownMenu = document.querySelector(".dropdown_menu");
+
       toggleBtn.onclick = function () {
-        dropDownMenu.classList.toggle('open')
-        const isOpen = dropDownMenu.classList.contains('open')
-        
-        toggleBtnIcon.classList= isOpen
-          ? 'fa-solid fa-xmark'
-          : 'fa-solid fa-ellipsis'
-      }
-    </script>  
+        dropDownMenu.classList.toggle("open");
+        const isOpen = dropDownMenu.classList.contains("open");
+
+        toggleBtnIcon.classList = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-ellipsis";
+      };
+    </script>
   </body>
 </html>
