@@ -55,38 +55,33 @@
     </header>
 
     <main>
-      <section id="photos">
-        <h2>Photos</h2>
+      
+        <div class="container">
+          <div class="slider">
+            <img class="active" src="https://source.unsplash.com/gKk9rpyDryU">
+            <img src="https://source.unsplash.com/VFGEhLznjPU">
+            <img src="https://source.unsplash.com/InR-EhiO_js">
+          </div>
+          <nav class="slider-nav">
+            <ul>
+              <li class="arrow">
+                <button class="previous">
+                  <span>
+                    <i class="ion-arrow-left-c"></i>
+                  </span>
+                </button>
+              </li>
+              <li class="arrow">
+                <button class="next">
+                  <span>
+                    <i class="ion-arrow-right-c"></i>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        <div class="gallery">
-            <a target="_blank" href="img_5terre.jpg">
-              <img src="https://placehold.co/600x400" alt="Cinque Terre" width="600" height="400">
-            </a>
-            <div class="desc">Add a description of the image here</div>
-          </div>
-          
-          <div class="gallery">
-            <a target="_blank" href="img_forest.jpg">
-              <img src="https://placehold.co/600x400" alt="Forest" width="600" height="400">
-            </a>
-            <div class="desc">Add a description of the image here</div>
-          </div>
-          
-          <div class="gallery">
-            <a target="_blank" href="img_lights.jpg">
-              <img src="https://placehold.co/600x400" alt="Northern Lights" width="600" height="400">
-            </a>
-            <div class="desc">Add a description of the image here</div>
-          </div>
-          
-          <div class="gallery">
-            <a target="_blank" href="img_mountains.jpg">
-              <img src="https://placehold.co/600x400" alt="Mountains" width="600" height="400">
-            </a>
-            <div class="desc">Add a description of the image here</div>
-          </div>
-
-      </section>
 
       <section class="photos" id="footer">
         <h6>&copy2024 The Boogaerts | <button formsappId="664226cbc7555b5685f5dccc"></button>
@@ -111,6 +106,55 @@
           ? "fa-solid fa-xmark"
           : "fa-solid fa-ellipsis";
       };
+    </script>
+
+    <!--Script for Image Slider-->
+    <script>
+      const items = document.querySelectorAll('img');
+const itemCount = items.length;
+const nextItem = document.querySelector('.next');
+const previousItem = document.querySelector('.previous');
+let count = 0;
+
+function showNextItem() {
+  items[count].classList.remove('active');
+
+  if(count < itemCount - 1) {
+    count++;
+  } else {
+    count = 0;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+function showPreviousItem() {
+  items[count].classList.remove('active');
+
+  if(count > 0) {
+    count--;
+  } else {
+    count = itemCount - 1;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+function keyPress(e) {
+  e = e || window.event;
+  
+  if (e.keyCode == '37') {
+    showPreviousItem();
+  } else if (e.keyCode == '39') {
+    showNextItem();
+  }
+}
+
+nextItem.addEventListener('click', showNextItem);
+previousItem.addEventListener('click', showPreviousItem);
+document.addEventListener('keydown', keyPress);
     </script>
   </body>
 </html>

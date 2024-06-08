@@ -233,188 +233,103 @@ section#footer a:hover {
 /*       PHOTOS PAGE STYLE       */
 /*===============================*/
 
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 180px;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 20px 5px;
+  color: #52786a;
+  font-size: 2rem;
 }
 
-div.gallery img {
-  width: 100%;
-  height: auto;
+button span {
+  position: relative;
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
-div.desc {
-  padding: 15px;
+.previous:hover span {
+  transform: translateX(-10px) scale(1.2);
+}
+
+.next:hover span {
+  transform: translateX(10px) scale(1.2);
+}
+
+.slider-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-nav li {
+  display: flex;
+  flex: 2;
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: none;
+  box-shadow: 10px 10px 20px 0 rgba(94,47,59,0.2);
+}
+
+img.active {
+  display: block;
+  animation: fadeImg 0.8s;
+}
+
+nav.slider-nav .arrow {
+  flex: 0 0 15%;
+}
+
+nav.slider-nav a {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav.slider-nav span {
+  display: block;
+  width: 100%;
+}
+
+@keyframes fadeImg {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /*    PHOTOS FOOTER    */
 
-section.photos {
-  position: absolute;
-}
+
 
 /*==================================*/
 /*       WEDDING PARTY STYLING      */
 /*==================================*/
 
-section#partyContainer {
-  height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #52786a;
-}
+
 /*=====Option 2=======*/
 
-/*
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-*/
-html {
-  font-size: calc(5px + 0.4vw);
-}
 
-section#partyContainer a {
-  text-decoration: none;
-}
-.intro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-.left {
-  float: left;
-  height: 100%;
-  width: 60%;
-  padding: 3rem 3rem 3rem 5rem;
-  display: table;
-}
-section.intro div.left > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-section.intro span {
-  color: #52786a;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  margin-bottom: 4rem;
-}
-section#partyContainer h1 {
-  font-size: 8rem;
-  margin-bottom: 3rem;
-  color: #f5b1a6;
-}
-section.intro h1 + section.intro p {
-  color: #949494;
-  font-size: 1.6rem;
-  margin-bottom: 4rem;
-}
-section.intro p {
-  font-size: 1.6rem;
-  color: #000;
-}
-div.slider {
-  float: right;
-  position: relative;
-  width: 40%;
-  height: 100%;
-}
-div.slider li {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  transition: clip 0.7s ease-in-out, z-index 0s 0.7s;
-  clip: rect(0, 100vw, 100vh, 100vw);
-  display: table;
-}
-.center-y {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  color: #fff;
-}
-div.slider h3 {
-  font-size: 5rem;
-  font-style: italic;
-}
-div.slider h3 + div.slider h4 {
-  font-size: 1.6rem;
-  display: inline-block;
-  color: #fff;
-  margin-top: 2rem;
-}
-div.slider h3,
-div.slider h3 + div.slider a {
-  opacity: 0;
-  transition: opacity 0.7s 0s, transform 0.5s 0.2s;
-  transform: translate3d(0, 50%, 0);
-}
-div.slider li.current h3,
-.slider li.current h3 + h4 {
-  opacity: 1;
-  transition-delay: 1s;
-  transform: translate3d(0, 0, 0);
-}
-div.slider li.current {
-  z-index: 1;
-  clip: rect(0, 100vw, 100vh, 0);
-}
-div.slider li.prev {
-  clip: rect(0, 0, 100vh, 0);
-}
-div.slider nav {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 10;
-}
-nav#sliderNav a {
-  display: inline-block;
-  border-radius: 50%;
-  width: 1.2rem;
-  height: 1.2rem;
-  min-width: 12px;
-  min-height: 12px;
-  background: #fff;
-  margin: 0 1rem;
-  transition: transform 0.3s;
-}
-nav#sliderNav a.current_dot {
-  transform: scale(1.4);
-}
-@media screen and (max-width: 700px) {
-  .left {
-    width: 100%;
-    height: 30%;
-  }
-  .slider {
-    width: 100%;
-    height: 70%;
-  }
-}
 
 /*======Option 1======*/
 
@@ -522,102 +437,4 @@ input:checked + input ~ input:before {
 /*==================================*/
 /*           PHOTOS PAGE            */
 /*==================================*/
-.swiper-container {
-  width: 80%;
-  height: 100vh;
-  float: left;
-  transition: opacity 0.6s ease, transform 0.3s ease;
-  &.nav-slider {
-    width: 20%;
-    padding-left: 5px;
-    .swiper-slide {
-      cursor: pointer;
-      opacity: 0.4;
-      transition: opacity 0.3s ease;
-      &.swiper-slide-active {
-        opacity: 1;
-      }
-      .content {
-        width: 100%;
-        .title {
-          font-size: 20px;
-        }
-      }
-    }
-  }
 
-  &:hover {
-    .swiper-button-prev,
-    .swiper-button-next {
-      transform: translateX(0);
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &.loading {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
-  overflow: hidden;
-  /*@extend %backface_visibility_hidden;*/
-  .slide-bgimg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .entity-img {
-    display: none;
-  }
-
-  .contant {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 50%;
-    padding-left: 5%;
-    color: #fff;
-    .title {
-      font-size: 2.6em;
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
-
-    .caption {
-      display: block;
-      font-size: 13px;
-      line-height: 1.4;
-      transform: translateX(50px);
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.7s ease;
-      &.show {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-  }
-}
-
-[class^="swiper-button-"] {
-  width: 44px;
-  opacity: 0;
-  visibility: hidden;
-  /*@extend %transition_all_03s;*/
-}
-.swiper-button-prev {
-  transform: translateX(50px);
-}
-.swiper-button-next {
-  transform: translateX(-50px);
-}
