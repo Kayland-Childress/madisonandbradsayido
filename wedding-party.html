@@ -34,7 +34,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="photos.html">Photos</a></li>
           <li><a href="wedding-party.html">Wedding Party</a></li>
-          <li><a href="qa.html">Q + A</a></li>
           <li>
             <a href="https://www.amazon.com/wedding/registry/2BLWNVJL12UG0"
               >Registry</a
@@ -52,7 +51,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="photos.html">Photos</a></li>
         <li><a href="wedding-party.html">Wedding Party</a></li>
-        <li><a href="qa.html">Q + A</a></li>
         <li>
           <a href="https://www.amazon.com/wedding/registry/2BLWNVJL12UG0"
             >Registry</a
@@ -64,6 +62,55 @@
 
     <main>
       <section id="partyContainer">
+
+
+        <section class="intro">
+            <div class="left">
+              <div>
+                <span>Madison and Brad Say I Do</span>
+                <h1>The Wedding Party</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet amet excepturi voluptates dolorem totam ad quod hic, porro accusamus, repellat, corrupti at obcaecati ducimus, dolor quibusdam sequi nemo inventore?</p>
+              </div>
+            </div>
+      
+            <div class="slider">
+              <ul>
+                <li style="background-image:url(https://images.unsplash.com/photo-1458640904116-093b74971de9?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
+                  <div class="center-y">
+                    <h3>Kayland Childress</h3>
+                    <h4></h4>Maid of Honor</h4>	
+                  </div>
+                </li>
+                <li style="background-image:url(https://images.unsplash.com/photo-1451906278231-17b8ff0a8880?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
+                  <div class="center-y">
+                    <h3>Slider Title #2</h3>
+                    <h4>View Project</h4>	
+                  </div>
+                </li>
+                <li style="background-image:url(https://images.unsplash.com/photo-1456428199391-a3b1cb5e93ab?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375)">
+                  <div class="center-y">
+                    <h3>Slider Title #3</h3>
+                    <h4>View Project</h4>	
+                  </div>
+                </li>
+              </ul>
+      
+              <ul>
+                <nav id="sliderNav">
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                </nav>
+              </ul>
+            </div>
+          </section>
+
+
+
+
+
+        <!--Option1-->
+        <!--
         <i>
           <input
             checked
@@ -127,6 +174,7 @@
             title="Random Picture 10"
           />
         </i>
+        -->
       </section>
 
       <!--Footer-->
@@ -146,6 +194,74 @@
       </section>
     </main>
 
+    <!--Wedding Party Slide Show Script-->
+    <script>
+        {
+	class SliderClip {
+		constructor(el) {
+			this.el = el;
+			this.Slides = Array.from(this.el.querySelectorAll('li'));
+			this.Nav = Array.from(this.el.querySelectorAll('nav a'));
+			this.totalSlides = this.Slides.length;
+			this.current = 0;
+			this.autoPlay = true; //true or false
+			this.timeTrans = 4000; //transition time in milliseconds
+			this.IndexElements = [];
+
+			for(let i=0;i<this.totalSlides;i++) {
+				this.IndexElements.push(i);
+			}
+
+			this.setCurret();
+			this.initEvents();
+		}
+		setCurret() {
+			this.Slides[this.current].classList.add('current');
+			this.Nav[this.current].classList.add('current_dot');
+		}
+		initEvents() {
+			const self = this;
+
+			this.Nav.forEach((dot) => {
+				dot.addEventListener('click', (ele) => {
+					ele.preventDefault();
+					this.changeSlide(this.Nav.indexOf(dot));
+				})
+			})
+
+			this.el.addEventListener('mouseenter', () => self.autoPlay = false);
+			this.el.addEventListener('mouseleave', () => self.autoPlay = true);
+
+			setInterval(function() {
+				if (self.autoPlay) {
+					self.current = self.current < self.Slides.length-1 ? self.current + 1 : 0;
+					self.changeSlide(self.current);
+				}
+			}, this.timeTrans);
+
+		}
+		changeSlide(index) {
+
+			this.Nav.forEach((allDot) => allDot.classList.remove('current_dot'));
+
+			this.Slides.forEach((allSlides) => allSlides.classList.remove('prev', 'current'));
+
+			const getAllPrev = value => value < index;
+
+			const prevElements = this.IndexElements.filter(getAllPrev);
+
+			prevElements.forEach((indexPrevEle) => this.Slides[indexPrevEle].classList.add('prev'));
+
+			this.Slides[index].classList.add('current');
+			this.Nav[index].classList.add('current_dot');
+		}
+	}
+
+	const slider = new SliderClip(document.querySelector('.slider'));
+}
+    </script>
+
+    <!--Navigation Script-->
     <script>
       const toggleBtn = document.querySelector(".toggle_btn");
       const toggleBtnIcon = document.querySelector(".toggle_btn i");
