@@ -50,7 +50,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #F2BFBF;
+  background: #f2bfbf;
   color: #fff;
 }
 
@@ -143,7 +143,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-  color: #F2BFBF;
+  color: #f2bfbf;
 }
 
 .navbar .dropdown ul {
@@ -178,7 +178,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover > a {
-  color: #F2BFBF;
+  color: #f2bfbf;
 }
 
 .navbar .dropdown:hover > ul {
@@ -277,7 +277,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover > a {
-  color: #F2BFBF;
+  color: #f2bfbf;
 }
 
 .navbar-mobile .getstarted,
@@ -323,7 +323,7 @@ h6 {
 
 #hero .btn-get-started:hover {
   padding-top: 10px;
-  color: #F2BFBF;
+  color: #f2bfbf;
 }
 
 @media (min-width: 1024px) {
@@ -412,7 +412,7 @@ section {
 .about .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #F2BFBF;
+  color: #f2bfbf;
   float: left;
   line-height: 0;
 }
@@ -470,8 +470,6 @@ section {
     max-width: 100%;
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # Registry
@@ -661,7 +659,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #F2BFBF;
+  color: #f2bfbf;
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -757,11 +755,10 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact {
-  background:#ffffff;
-  
+  background: #ffffff;
 }
 
-.contact .row{
+.contact .row {
   background-image: url(../img/logo-250.png);
   width: 100%;
   height: auto;
